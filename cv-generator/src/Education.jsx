@@ -3,31 +3,48 @@ import { useState } from "react";
 
 
 const Education = () => {
-const degreeTypes = ['Associates', 'Bachelors', 'Masters', 'Doctorate'];
-const degreeList = degreeTypes.map((item, index)=> <option key={index} value={item}>{item}</option>);
+
+    const [schoolInfo, setSchoolInfo] = useState({
+        schoolName:'',
+        fieldOfStudy:'',
+        degree:''
+    });
+    const handleSchoolInfo = (e) => {
+        const name = e.target.name;
+        setSchoolInfo({...schoolInfo, [name]: e.target.value})
+        console.log(schoolInfo)
+    }
+const degreeTypes = ['Associates', 'Bachelors', 'Masters', 'Doctorate']
+        .map((item, index)=> <option key={index} value={item}>{item}</option>);
+ 
 
  return (
     <>
         <fieldset>
             <legend>Education</legend>
             <section>
-                <label htmlFor="school">School</label>
+                <label htmlFor="school">School:</label>
                 <input 
-                type="text" 
-                id="school" 
-                placeholder="College or University" 
+                    onChange= {(e)=> handleSchoolInfo(e)}
+                    type="text" 
+                    id="school" 
+                    name="schoolName"
+                    placeholder="College or University" 
                 />
-               <label htmlFor="degree">Degree</label> 
-               <select id="degree" placeholder="">
-                    {degreeList}
+               <label htmlFor="degree">Degree:</label> 
+               <select
+               onClick={(e)=> handleSchoolInfo(e)} name="degree" id="degree">
+                    {degreeTypes}
                </select>
-               <label htmlFor="fos">Field of Study</label>
+               
+               <label htmlFor="fos">Field of Study:</label>
                <input 
-               type="text" 
-               id="fos"
-               placeholder="Computer Science" 
+                    onChange= {(e)=> handleSchoolInfo(e)}
+                    type="text"
+                    name="fieldOfStudy"
+                    id="fos"
+                    placeholder="Computer Science" 
                />
-                
             </section>
         </fieldset>
     </>
