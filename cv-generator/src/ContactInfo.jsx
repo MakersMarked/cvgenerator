@@ -1,9 +1,5 @@
 
-// firstName, lastName, currentJob, summary, email, phoneNum, location, website
 const ContactInfo = ({handleContactInfo}) => {
-
-    
-
     return (
         <form >
             <fieldset className="basic-info">

@@ -56,7 +56,9 @@ input, select {
   float: left;
   margin-right: 50px;
 }
-
+.temp {
+  float: left;
+}
 /* End */
 a {
   font-weight: 500;
