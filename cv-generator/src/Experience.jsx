@@ -1,28 +1,32 @@
-import { useState } from "react";
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css";
 
-const Experience = () => {
 
-	const [workExp, setWorkExp ] = useState({
-		companyName: '',
-		positionTitle: '',
-		responsibilities:'',
-		startDate:'',
-		endDate:'',
-		current:false
-	})
+const Experience = ({handleStartDate, handleEndDate, handleWorkExp, date}
+ ) => {
 
-	const handleWorkExp = (e)=> {
-		const keyName = e.target.name;
-		setWorkExp({...workExp,[keyName]:e.target.value});
-        console.log(workExp)
-	}
+	
 	return (
         <fieldset>
             <legend>Work Experience</legend>
             <section>
+                <label htmlFor="startDate">Start Date</label> 
+                <DatePicker
+                    name="startDate" 
+                    id="startDate"
+                    selected={date.startDate}
+                    onChange={handleStartDate} />
+                    <label htmlFor="endDate">End Date</label> 
+                
+                <DatePicker
+                    selected= {date.endDate}
+                    name="endDate" 
+                    id="endDate"
+                    onChange={handleEndDate}
+                    />                
                 <label htmlFor="companyName">Company Name</label>
                 <input 
-                onChange={(e)=> handleWorkExp(e)}
+                onChange={handleWorkExp}
                 type="text" 
                 name="companyName"
                 id="companyName"
@@ -40,14 +44,11 @@ const Experience = () => {
                  name="responsibilities" 
                  id="responsibilities" 
                  cols="30" 
-                 rows="10" 
+                 rows="5"
                  />
-                 {/* start Date and End Date new Date() */}
             </section>
         </fieldset>
-
     )
-
 }
 
 export default Experience

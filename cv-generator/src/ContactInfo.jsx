@@ -1,22 +1,8 @@
-import { useState } from "react"
-// firstName, lastName, currentJob, summary, email, phoneNum, location, website
-const ContactInfo = () => {
 
-    const [contactInfo, setContactInfo] = useState({
-       firstName:null,
-       lastName:'',
-       currentJob:'',
-       summary:'',
-       email:'',
-       phoneNum:'',
-       location:'',
-       website:'' 
-    })
+// firstName, lastName, currentJob, summary, email, phoneNum, location, website
+const ContactInfo = ({handleContactInfo}) => {
+
     
-    const handleContactInfo = (e) => {
-        const newInfo = e.target.name;
-        setContactInfo(({...contactInfo, [newInfo]:  e.target.value}))
-    }
 
     return (
         <form >
@@ -91,13 +77,13 @@ const ContactInfo = () => {
                     />
                     <label htmlFor="summary">Summary:</label>
                     <textarea 
-                    onChange= {(e)=> handleContactInfo(e)} 
-                    type="" 
-                    id="summary" 
-                    name="summary" 
-                    rows="4" 
-                    cols="30">
-
+                        onChange= {(e)=> handleContactInfo(e)} 
+                        type="" 
+                        id="summary" 
+                        name="summary" 
+                        rows="4" 
+                        cols="30"
+                    >
                     </textarea>
                 </section>
             </fieldset>
