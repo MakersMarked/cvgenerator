@@ -1,4 +1,7 @@
-const Education = ({handleSchoolInfo}) => {
+import { SubmitBtn } from "./Utils"
+
+
+const Education = ({handleSchoolInfo, handleEducationList }) => {
 
     const degreeTypes = ['Associates', 'Bachelors', 'Masters', 'Doctorate']
     .map((item, index)=> <option key={index} value={item}>{item}</option>)
@@ -9,7 +12,7 @@ const Education = ({handleSchoolInfo}) => {
             <section>
                 <label htmlFor="school">School:</label>
                 <input 
-                    onChange= {(e)=> handleSchoolInfo(e)}
+                    onChange= {handleSchoolInfo}
                     type="text" 
                     id="school" 
                     name="schoolName"
@@ -17,20 +20,27 @@ const Education = ({handleSchoolInfo}) => {
                 />
                <label htmlFor="degree">Degree:</label> 
                <select
-               onClick={(e)=> handleSchoolInfo(e)} name="degree" id="degree">
+               onClick={handleSchoolInfo} name="degree" id="degree">
                     {degreeTypes}
                </select>
                
                <label htmlFor="fos">Field of Study:</label>
                <input 
-                    onChange= {(e)=> handleSchoolInfo(e)}
+                    onChange= {handleSchoolInfo}
                     type="text"
                     name="fieldOfStudy"
                     id="fos"
                     placeholder="Computer Science" 
                />
             </section>
+            <SubmitBtn 
+                onClick={handleEducationList} 
+                text = "Add"
+            />
+                
+            
         </fieldset> 
+        
  ) 
 }
 

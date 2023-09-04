@@ -8,7 +8,7 @@ const ContactInfo = ({handleContactInfo}) => {
                     <div>
                         <label htmlFor="fname">First Name:</label>
                         <input 
-                            onChange= {(e)=> handleContactInfo(e)}  
+                            onChange= {handleContactInfo}  
                             type="text" 
                             id="fname" 
                             name="firstName" 
@@ -18,7 +18,7 @@ const ContactInfo = ({handleContactInfo}) => {
                     <div>
                         <label htmlFor="lname">Last Name:</label>
                         <input 
-                            onChange= {(e)=> handleContactInfo(e)} 
+                            onChange= {handleContactInfo} 
                             type="text" 
                             id="lname" 
                             name="lastName" 
@@ -30,7 +30,7 @@ const ContactInfo = ({handleContactInfo}) => {
                 <section className="email-phone">
                     <label htmlFor="email">Email Address:</label>
                     <input  
-                        onChange= {(e)=> handleContactInfo(e)} 
+                        onChange= {handleContactInfo} 
                         type="email" 
                         id="email" 
                         name="email" 
@@ -38,7 +38,7 @@ const ContactInfo = ({handleContactInfo}) => {
                     />
                     <label htmlFor="phone">Phone Number:</label>
                     <input 
-                        onChange= {(e)=> handleContactInfo(e)} 
+                        onChange= {handleContactInfo} 
                         type="tel" 
                         id="phone" 
                         name="phoneNum" 
@@ -47,7 +47,7 @@ const ContactInfo = ({handleContactInfo}) => {
                 <section className= "loc-web">
                     <label htmlFor="location">Location:</label>
                     <input
-                        onChange= {(e)=> handleContactInfo(e)} 
+                        onChange= {handleContactInfo} 
                         type="text" 
                         id="location" 
                         name="location" 
@@ -55,7 +55,7 @@ const ContactInfo = ({handleContactInfo}) => {
                      />
                     <label htmlFor="website">Website:</label>
                     <input 
-                        onChange= {(e)=> handleContactInfo(e)} 
+                        onChange= {handleContactInfo} 
                         type="text" 
                         id="website" 
                         name="website" 
@@ -65,7 +65,7 @@ const ContactInfo = ({handleContactInfo}) => {
                 <section className="job-input">
                     <label htmlFor="job">Current Title:</label>
                     <input 
-                    onChange= {(e)=> handleContactInfo(e)} 
+                    onChange= {handleContactInfo} 
                     type="text" 
                     id="job" 
                     name="job" 
@@ -73,7 +73,7 @@ const ContactInfo = ({handleContactInfo}) => {
                     />
                     <label htmlFor="summary">Summary:</label>
                     <textarea 
-                        onChange= {(e)=> handleContactInfo(e)} 
+                        onChange= {handleContactInfo} 
                         type="" 
                         id="summary" 
                         name="summary" 

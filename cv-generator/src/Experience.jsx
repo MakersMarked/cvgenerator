@@ -1,8 +1,9 @@
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
+import { SubmitBtn } from "./Utils";
 
 
-const Experience = ({handleStartDate, handleEndDate, handleWorkExp, date}
+const Experience = ({handleStartDate, handleEndDate, handleWorkExp, handleWorkExpList, date}
  ) => {
 
 	
@@ -47,6 +48,7 @@ const Experience = ({handleStartDate, handleEndDate, handleWorkExp, date}
                  rows="5"
                  />
             </section>
+            <SubmitBtn onClick={handleWorkExpList} text="Add"/>
         </fieldset>
     )
 }

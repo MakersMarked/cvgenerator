@@ -1,0 +1,63 @@
+.preview {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+ max-width: 800px;
+ min-width: 320px;
+ margin: 0 auto
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+    text-align: start;
+    max-width: 500px;
+    
+}
+.contact-info-section {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.contact-info-section > div {
+    padding: 10px;
+    border-right: solid 1px var(--text-color);
+    border-left: solid 1px var(--text-color);
+    flex-shrink: 1;
+    
+}
+.resume-container {
+
+  
+}
+
+.resume-section {
+  
+}
+
+.resume-section-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+}
+
+.resume-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.resume-section-content > p {
+    margin-top: -5px;
+}
+.work-title {
+    display: flex;
+    gap: 50px;
+    font-style: italic;
+}

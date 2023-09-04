@@ -27,11 +27,16 @@ const [contactInfo, setContactInfo] = useState({
         fieldOfStudy:'',
         degree:''
     });
+    const [educationList, setEducationList] = useState([])
+    
 const handleSchoolInfo = (e) => {
         const name = e.target.name;
         setSchoolInfo({...schoolInfo, [name]: e.target.value})
-        console.log(schoolInfo)
     }
+const handleEducationList = () => { 
+  const list = educationList.push(schoolInfo)
+      setEducationList([{list}, ...educationList])
+    }    
   // Work Exp  component's State and Fn
   const [workExp, setWorkExp ] = useState({
 		companyName: '',
@@ -42,18 +47,25 @@ const handleSchoolInfo = (e) => {
             endDate:''
         }
 	})
+  const [workExpList, setWorkExpList] = useState([])
+  
+  const handleWorkExpList = () => { 
+    const list = workExpList.push(workExp)
+        setWorkExpList([{list}, ...workExpList])
+        console.log(workExpList)
+      }
+
   const [date, setDate] = useState(workExp.dates);
 
+  
      const handleStartDate = (e) => {
         setDate({...date, startDate: e })
         setWorkExp({...workExp, dates: date})
-        console.log(workExp)
      }
      const handleEndDate = (e) => {
         setDate({...date, endDate: e })
         setWorkExp({...workExp, dates: date})
         console.log(workExp)
-
      }
 	const handleWorkExp = (e)=> {
 		const tempName = e.target.name;
@@ -61,24 +73,35 @@ const handleSchoolInfo = (e) => {
         console.log(workExp)
 	}
   return (
-    <>
-     <div className="temp">
-      <ContactInfo handleContactInfo={handleContactInfo} />
-      <Education handleSchoolInfo={handleSchoolInfo}/>
+    <div className='module'>
+
+<div className="temp">
+      <ContactInfo 
+        handleContactInfo={handleContactInfo} 
+      />
+      <Education 
+        handleSchoolInfo={handleSchoolInfo} 
+        handleEducationList={handleEducationList}
+      />
       <Experience
         handleStartDate = {handleStartDate}
         handleEndDate = {handleEndDate}
         handleWorkExp = {handleWorkExp}
+        handleWorkExpList={handleWorkExpList}
         date= {date}
       />
      </div>
-      
-      <Preview 
-        contactInfo={contactInfo}
-        schoolInfo={schoolInfo}
-        workExp={workExp}
-      />
-    </>
+      <div>
+        <Preview 
+                contactInfo={contactInfo}
+                educationList={educationList}
+                workExpList={workExpList}
+              />
+      </div>
+    </div>
+     
+     
+    
   )
 }
 

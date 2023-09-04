@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --input-hover: white;
   --text-color: rgba(255, 255, 255, 0.87);
   --bgc: #242424;
   color-scheme: light dark;
@@ -51,7 +52,9 @@ label {
 input, select {
  margin-bottom: 20px;
 }
-
+input:focus, textarea:focus, select:focus{
+  background-color: var(--input-bgc)
+}
 .email-phone {
   float: left;
   margin-right: 50px;
