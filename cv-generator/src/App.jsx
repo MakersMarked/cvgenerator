@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Preview from './Preview';
-import ContactInfo from './ContactInfo';
-import Education from './Education';
-import Experience from './Experience';
+import Preview from './components/Preview';
+import ContactInfo from './components/ContactInfo';
+import Education from './components/Education';
+import Experience from './components/Experience';
 function App() {
 
 // Contact Info components's State and Fn's

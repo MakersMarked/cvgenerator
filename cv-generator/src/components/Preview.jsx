@@ -1,4 +1,4 @@
-import './Styles/preview.css';
+import '../Styles/preview.css';
 
 const Preview = ({contactInfo, educationList, workExpList}) => {
     const fullName = contactInfo.firstName + ' ' + contactInfo.lastName;

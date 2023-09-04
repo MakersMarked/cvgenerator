@@ -23,7 +23,6 @@ const Education = ({handleSchoolInfo, handleEducationList }) => {
                onClick={handleSchoolInfo} name="degree" id="degree">
                     {degreeTypes}
                </select>
-               
                <label htmlFor="fos">Field of Study:</label>
                <input 
                     onChange= {handleSchoolInfo}
