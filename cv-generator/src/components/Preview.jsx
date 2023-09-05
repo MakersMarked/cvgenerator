@@ -1,26 +1,30 @@
 import '../Styles/preview.css';
 
-const Preview = ({contactInfo, educationList, workExpList}) => {
+const Preview = ({contactInfo, educationList, workExpList, handleDeleteWork, handleDeleteSchool}) => {
     const fullName = contactInfo.firstName + ' ' + contactInfo.lastName;
-    
-    const degreeList = educationList.map((school, index) => {
+    const degreeList = educationList.map((school) => {
+      
       return(
-      <div className="resume-section-content" key ={index}>
-        <div>{school.schoolName}</div>
-        <div>{school.degree+': '+school.fieldOfStudy}</div>
-        <div>{}</div>
-        
+      <div className="resume-section-content" key ={school.id}>
+        <div className='school-title'>
+          <div>{school.schoolName + ', ' + school.gradYear} </div>
+          <div>{school.degree+': '+school.fieldOfStudy}</div> 
+        </div>
+        <span onClick={()=>handleDeleteSchool(school.id)}>X</span>
       </div>
+      
     )})
-const workList = workExpList.map((job, index) => {
+const workList = workExpList.map((job) => {
+  
   return (
-    <div className="resume-section-content" key={index}>
+    <div className="resume-section-content" key={job.id}>
       <div className='work-title'>
         <div>{job.positionTitle}</div>
         <div>{job.companyName}</div>
+        <span onClick={()=>handleDeleteWork(job.id)} >X</span>
       </div>
-      {/* <p>{job.dates.startDate + '-' + job.dates.endDate}</p> */}
       <p>{job.responsibilities}</p>
+      
     </div>
   )
 })

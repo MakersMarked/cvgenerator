@@ -8,7 +8,6 @@
   color-scheme: light dark;
   color: var(--text-color);
   background-color: var(--bgc);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +15,11 @@
   -webkit-text-size-adjust: 100%;
 }
 /* Custom CSS so far */
+.module {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .header {
   display: flex;
   min-width: 320px;
@@ -30,12 +34,15 @@ nav {
   padding: 10px;
   align-items: flex-end;
 }
-
+section{
+  display: flex;
+  gap: 50px;
+}
 fieldset {
   margin: 20px;
   border: 1px var(--text-color) solid;
   max-width: 600px;
-  min-width: 320px;
+  
 }
 
 input, label {
@@ -49,18 +56,26 @@ label {
   display: flex;
   gap: 50px;
 }
-input, select {
+input, select, textarea {
  margin-bottom: 20px;
+ border-radius: 5px;
+ transition: border-color 0.2s;
+ 
 }
-input:focus, textarea:focus, select:focus{
-  background-color: var(--input-bgc)
+input:hover, textarea:hover, select:hover{
+  border-color: var(--text-color);
+  border: 2px solid ;
 }
-.email-phone {
-  float: left;
-  margin-right: 50px;
+#gradYear {
+  width: 30px;
 }
-.temp {
-  float: left;
+.school {
+  display: flex;
+  gap: 50px;
+}
+.exp {
+  display: flex;
+  gap: 50px;
 }
 /* End */
 a {
@@ -96,7 +111,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--text-color);
 }
 button:focus,
 button:focus-visible {

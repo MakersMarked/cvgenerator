@@ -14,7 +14,7 @@ h1 {
 p {
     text-align: start;
     max-width: 500px;
-    
+    margin-top: -5px;
 }
 .contact-info-section {
     display: flex;
@@ -53,11 +53,25 @@ p {
   flex-direction: column;
   gap: 5px;
 }
-.resume-section-content > p {
-    margin-top: -5px;
+
+.resume-section-content > div:first-child {
+  font-style: italic;
+  font-weight: 800;
+}
+span {
+  display: none;
+}
+.resume-section-content:hover > div > span {
+  display: contents;
 }
 .work-title {
     display: flex;
     gap: 50px;
     font-style: italic;
+}
+#school {
+ display: flex; 
+}
+#school:hover >span {
+  display: contents;
 }
