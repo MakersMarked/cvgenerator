@@ -4,9 +4,11 @@ import Preview from './components/Preview';
 import ContactInfo from './components/ContactInfo';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import Modal from './components/Modal';
+import { SubmitBtn } from './components/Utils';
 
 function App() {
-
+const [openModal, setOpenModal] = useState(false)
 // Contact Info components's State and Fn's
 const [contactInfo, setContactInfo] = useState({
        firstName:'',
@@ -78,7 +80,7 @@ const handleEducationList = () => {
   return (
     <div className='module'>
 
-      <div>
+      <div className='main-content'>
         <ContactInfo 
         handleContactInfo={handleContactInfo} 
       />
@@ -92,16 +94,12 @@ const handleEducationList = () => {
         handleWorkExpList={handleWorkExpList}
         
       />
-
-      
-        <Preview 
-                contactInfo={contactInfo}
+  <SubmitBtn onClick={()=> setOpenModal(true)} text="Submit" />
+      {openModal && <Modal contactInfo={contactInfo}
                 educationList={educationList}
                 workExpList={workExpList}
                 handleDeleteWork={handleDeleteWork}
-                handleDeleteSchool={handleDeleteSchool}
-                
-        />
+                handleDeleteSchool={handleDeleteSchool}/>}
       </div>
       
     </div>

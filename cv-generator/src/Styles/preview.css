@@ -74,4 +74,5 @@ span {
 }
 #school:hover >span {
   display: contents;
+  cursor: pointer;
 }
