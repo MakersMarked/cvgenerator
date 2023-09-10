@@ -1,10 +1,23 @@
-.preview {
+.preview-container {
+  display: flex;
+  position: fixed;
+  background-color: gray;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(240, 209, 209, 0.076);
+  
+}
+.preview-content {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
  max-width: 800px;
  min-width: 320px;
- margin: 0 auto
+ margin: 0 auto;
+ border: 1px solid black;
+ padding: 20px;
+ height: fit-content;
+ margin-top: 50px;
 }
 
 h1 {
@@ -52,6 +65,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  border: 1px solid white;
 }
 
 .resume-section-content > div:first-child {
@@ -60,9 +74,11 @@ p {
 }
 span {
   display: none;
+  
 }
 .resume-section-content:hover > div > span {
   display: contents;
+  
 }
 .work-title {
     display: flex;
@@ -71,8 +87,4 @@ span {
 }
 #school {
  display: flex; 
-}
-#school:hover >span {
-  display: contents;
-  cursor: pointer;
 }

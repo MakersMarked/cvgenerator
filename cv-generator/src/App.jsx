@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import  uniqid  from 'uniqid'
 import Preview from './components/Preview';
-import ContactInfo from './components/ContactInfo';
-import Education from './components/Education';
-import Experience from './components/Experience';
-import Modal from './components/Modal';
 import { SubmitBtn } from './components/Utils';
+import Form from './components/Form';
+
 
 function App() {
-const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
+
 // Contact Info components's State and Fn's
-const [contactInfo, setContactInfo] = useState({
+  const [contactInfo, setContactInfo] = useState({
        firstName:'',
        lastName:'',
        currentJob:'',
@@ -18,10 +17,10 @@ const [contactInfo, setContactInfo] = useState({
        email:'',
        phoneNum:'',
        location:'',
-       website:'' 
+       website:'', 
     })
     
-    const handleContactInfo = (e) => {
+  const handleContactInfo = (e) => {
         const newInfo = e.target.name;
         setContactInfo(({...contactInfo, [newInfo]:  e.target.value}))
     }
@@ -33,9 +32,9 @@ const [contactInfo, setContactInfo] = useState({
         gradYear:'',
         id:''
     });
-    const [educationList, setEducationList] = useState([])
+  const [educationList, setEducationList] = useState([])
     
-const handleSchoolInfo = (e) => {
+  const handleSchoolInfo = (e) => {
         const name = e.target.name;
         setSchoolInfo({...schoolInfo, [name]: e.target.value, id: uniqid()})
         
@@ -78,33 +77,32 @@ const handleEducationList = () => {
   }
  
   return (
+    <>
+    {!openModal && 
     <div className='module'>
-
-      <div className='main-content'>
-        <ContactInfo 
-        handleContactInfo={handleContactInfo} 
-      />
-      <Education 
-        handleSchoolInfo={handleSchoolInfo} 
-        handleEducationList={handleEducationList}
-       
-      />
-      <Experience
-        handleWorkExp = {handleWorkExp}
-        handleWorkExpList={handleWorkExpList}
+        <div className='main-content'>
+          <Form 
+          handleContactInfo={handleContactInfo}
+          handleSchoolInfo={handleSchoolInfo}
+          handleEducationList={handleEducationList}
+          handleWorkExp={handleWorkExp}
+          handleWorkExpList={handleWorkExpList}
+          />
+          <SubmitBtn onClick={()=> setOpenModal(true)} text="Submit" />
+          
+        </div>
         
-      />
-  <SubmitBtn onClick={()=> setOpenModal(true)} text="Submit" />
-      {openModal && <Modal contactInfo={contactInfo}
-                educationList={educationList}
-                workExpList={workExpList}
-                handleDeleteWork={handleDeleteWork}
-                handleDeleteSchool={handleDeleteSchool}/>}
-      </div>
+      </div>}
       
-    </div>
-     
-     
+      {openModal && <Preview 
+                  closeModal={setOpenModal}
+                  contactInfo={contactInfo}
+                  educationList={educationList}
+                  workExpList={workExpList}
+                  handleDeleteWork={handleDeleteWork}
+                  handleDeleteSchool={handleDeleteSchool}/>}
+    </>
+    
     
   )
 }
