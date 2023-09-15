@@ -1,8 +1,6 @@
 import ContactInfo from "./ContactInfo";
 import Education from "./Education";
 import Experience from "./Experience";
-import { SubmitBtn } from "./Utils";
-
 
  const Form = ({handleContactInfo,handleSchoolInfo, handleEducationList,handleWorkExp,handleWorkExpList}) => {
     return (
@@ -14,15 +12,13 @@ import { SubmitBtn } from "./Utils";
         <Education 
           handleSchoolInfo={handleSchoolInfo} 
           handleEducationList={handleEducationList}
-        
         />
         <Experience
           handleWorkExp = {handleWorkExp}
           handleWorkExpList={handleWorkExpList} 
         />
-      </div>
+    </div>
     )
-
 }
 
 export default Form

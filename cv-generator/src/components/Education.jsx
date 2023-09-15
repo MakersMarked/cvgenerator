@@ -22,12 +22,12 @@ const Education = ({handleSchoolInfo, handleEducationList }) => {
                 </div>
                 <div>
                     <label htmlFor="degree">Degree:</label> 
-                    <select onClick={handleSchoolInfo} name="degree" id="degree">
+                    <select onClick={handleSchoolInfo} name="degree" id="degree" value={degreeTypes[0]}>
                         {degreeTypes}
                     </select>
                 </div>
             </section>
-            <section>
+            <section className="fieldOfStudy">
                 <div>
                     <label htmlFor="fos">Field of Study:</label>
                     <input 

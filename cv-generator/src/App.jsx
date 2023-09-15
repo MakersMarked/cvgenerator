@@ -79,7 +79,7 @@ const handleEducationList = () => {
   return (
     <>
     {!openModal && 
-    <div className='module'>
+      <div className='module'>
         <div className='main-content'>
           <Form 
           handleContactInfo={handleContactInfo}
@@ -89,12 +89,10 @@ const handleEducationList = () => {
           handleWorkExpList={handleWorkExpList}
           />
           <SubmitBtn onClick={()=> setOpenModal(true)} text="Submit" />
-          
         </div>
-        
       </div>}
       
-      {openModal && <Preview 
+    {openModal && <Preview 
                   closeModal={setOpenModal}
                   contactInfo={contactInfo}
                   educationList={educationList}
@@ -102,8 +100,6 @@ const handleEducationList = () => {
                   handleDeleteWork={handleDeleteWork}
                   handleDeleteSchool={handleDeleteSchool}/>}
     </>
-    
-    
   )
 }
 

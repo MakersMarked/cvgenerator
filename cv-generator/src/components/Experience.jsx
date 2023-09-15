@@ -10,7 +10,7 @@ const Experience = ({handleWorkExp, handleWorkExpList}
 	return (
         <fieldset>
             <legend>Work Experience</legend>
-            <section>
+            <section className="companyName">
                 <div>
                     <label htmlFor="companyName">Company Name</label>
                     <input 

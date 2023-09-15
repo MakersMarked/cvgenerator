@@ -65,7 +65,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  border: 1px solid white;
+  
 }
 
 .resume-section-content > div:first-child {
@@ -73,12 +73,13 @@ p {
   font-weight: 800;
 }
 span {
-  display: none;
-  
+  padding: 5px;
+  float: right;
 }
 .resume-section-content:hover > div > span {
-  display: contents;
-  
+  float: right;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 .work-title {
     display: flex;

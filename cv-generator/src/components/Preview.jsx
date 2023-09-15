@@ -9,9 +9,10 @@ const Preview = ({closeModal, contactInfo, educationList, workExpList, handleDel
       return(
       <div className="resume-section-content" key ={school.id}>
         <div className='school-title'>
+          <span onClick={()=>handleDeleteSchool(school.id)}>X</span>
           <div>{school.schoolName + ', ' + school.gradYear} </div>
           <div>{school.degree+': '+school.fieldOfStudy}</div> 
-          <span onClick={()=>handleDeleteSchool(school.id)}>X</span>
+          
         </div>
         
       </div>
